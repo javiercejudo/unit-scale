@@ -4,15 +4,12 @@
 
 require('should');
 
+var rescaleUtil = require('rescale-util');
 var unitScale = require('../src/index');
 
 describe('unit scale', function() {
-  it('should be an array', function() {
-    ({}.toString.call(unitScale)).should.equal('[object Array]');
-  });
-
-  it('should have two elements', function() {
-    unitScale.length.should.be.exactly(2);
+  it('should be a scale', function() {
+    rescaleUtil.isValidScale(unitScale).should.be.exactly(true);
   });
 
   it('should have 0 as the first element', function() {
